@@ -11,8 +11,8 @@
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
     "prod": "tsc && node ./www/server.js",
-    "clean": "rmdir /s /q www ",
-    "build": "npm run clean && tsc && copyfiles src/config www && copyfiles .npmrc www && copyfiles package.json www && cd www && 7z a -tzip Archive.zip . && cd ..",
+    "clean": "rm -rf www/ || true ",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "sh bin/deploy.sh"
   },
