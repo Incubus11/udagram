@@ -11,6 +11,8 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
+      - node/install-packages:
+          pkg-manager: yarn
       - run: node --version
       - run:
           name: Front-End Install
