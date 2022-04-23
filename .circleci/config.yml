@@ -6,13 +6,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
+      - image:  cimg/node:16.2.0
     steps:
       - node/install
       - checkout
-      - aws-cli/setup
-      - node/install-packages:
-          pkg-manager: yarn
+      - aws-cli/setup      
       - run: node --version
       - run:
           name: Front-End Install
