@@ -6,14 +6,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install:
-        install-yarn:true
-        node-version:'16.13'
+      - image: cimg/node:16.13.2
+    steps:      
       - checkout
       - aws-cli/setup
-      - run: node --version
+      - eb/setup            
       - run:
           name: Front-End Install
           command: |
@@ -38,5 +35,13 @@ jobs:
           name: Deploy fron-end
           command: |
             npm run frontend:deploy
+      - run:
+          name: test Back-End
+          command: |
+            npm run test:deploy
+      - run:
+          name: test fron-end
+          command: |
+            npm run frontend:test
   
 
