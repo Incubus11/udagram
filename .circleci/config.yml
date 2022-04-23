@@ -13,6 +13,7 @@ jobs:
         node-version:'16.13'
       - checkout
       - aws-cli/setup
+      - run: node --version
       - run:
           name: Front-End Install
           command: |
