@@ -46,7 +46,7 @@ jobs:
 workflows:
   build-deploy-test:
     jobs:
-      - build      
+      - build:      
           filters:
             branches:
               only: /master\/.*/
