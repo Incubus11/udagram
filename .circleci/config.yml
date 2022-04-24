@@ -44,8 +44,9 @@ jobs:
           command: |
             npm run frontend:test
 workflows:
+ build-deploy:
   jobs:
-    -build
+    -build:
       filters:
             branches:
               only: /server\/.*/
