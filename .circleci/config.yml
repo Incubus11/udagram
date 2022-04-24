@@ -44,6 +44,7 @@ jobs:
           command: |
             npm run frontend:test
 workflows:
+<<<<<<< HEAD
   workflow:
       build:
         jobs:
@@ -52,4 +53,13 @@ workflows:
                 branches:
                   only: 
                     -master
+=======
+  build:
+    jobs:
+      - build:      
+          filters:
+            branches:
+              only: 
+                -master
+>>>>>>> d15fb393a3deae3599a143dbc1b1a3d18dfaaf3a
 
