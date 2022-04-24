@@ -5,9 +5,6 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@1.0.0
 jobs:
   build:
-    branches:
-      only:
-        - master
     docker:
       - image: cimg/node:16.13.2
     steps:      
@@ -46,5 +43,10 @@ jobs:
           name: test fron-end
           command: |
             npm run frontend:test
-
+workflows:
+  jobs:
+    -build
+      filters:
+            branches:
+              only: /server\/.*/
 
