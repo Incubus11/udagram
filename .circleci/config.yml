@@ -44,11 +44,12 @@ jobs:
           command: |
             npm run frontend:test
 workflows:
-  build:
-    jobs:
-      - build:      
-          filters:
-            branches:
-              only: 
-                -master
+  workflow:
+      build:
+        jobs:
+          - build:      
+              filters:
+                branches:
+                  only: 
+                    -master
 
